@@ -13,9 +13,7 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Disable multimedia repo
-for repo in /etc/yum.repos.d/*multimedia*.repo; do \
-    [ -f "$repo" ] && sed -i 's/^enabled=1/enabled=0/' "$repo"; \
-done
+dnf5 config-manager setopt fedora-multimedia.enabled=0
 
 # Install RPM Fusion repo
 dnf5 install -y \
