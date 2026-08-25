@@ -25,13 +25,10 @@ dnf5 install -y \
     akmod-nvidia-580xx \
     xorg-x11-drv-nvidia-580xx \
     xorg-x11-drv-nvidia-580xx-cuda \
-    kernel-devel \
-    kernel-headers \
     gcc \
     make \
     elfutils-libelf-devel \
-    kmodtool \
-    mokutil
+    kmodtool
 
 # Compile driver for this build's kernel
 kver="$(rpm -q --qf '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-core | tail -n1)"; \
